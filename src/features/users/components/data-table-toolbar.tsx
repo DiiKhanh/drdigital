@@ -1,7 +1,7 @@
 import { Cross2Icon } from '@radix-ui/react-icons'
 import { Table } from '@tanstack/react-table'
 import { Button } from '@/components/ui/button'
-import { userTypes } from '../data/data'
+import { regionTypes } from '../data/data'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select'
 
 interface DataTableToolbarProps<TData> {
@@ -45,23 +45,23 @@ export function DataTableToolbar<TData>({
             );
           })()}
           {(() => {
-            const roleValue = String(table.getColumn('role')?.getFilterValue() ?? 'all');
-            const roleLabel = userTypes.find(t => t.value === roleValue)?.label || 'Vùng';
+            const roleValue = String(table.getColumn('region')?.getFilterValue() ?? 'all');
+            const roleLabel = regionTypes.find(t => t === roleValue) || 'Vùng';
             
             return (
               <Select
                 value={roleValue}
                 onValueChange={value =>
-                  table.getColumn('role')?.setFilterValue(value === 'all' ? undefined : value)
+                  table.getColumn('region')?.setFilterValue(value === 'all' ? undefined : value)
                 }
               >
                 <SelectTrigger className='w-36'>
                   <SelectValue>{roleLabel}</SelectValue>
                 </SelectTrigger>
                 <SelectContent>
-                  <SelectItem value='all'>All Roles</SelectItem>
-                  {userTypes.map(type => (
-                    <SelectItem key={type.value} value={type.value}>{type.label}</SelectItem>
+                  <SelectItem value='all'>Tất cả</SelectItem>
+                  {regionTypes.map(type => (
+                    <SelectItem key={type} value={type}>{type}</SelectItem>
                   ))}
                 </SelectContent>
               </Select>

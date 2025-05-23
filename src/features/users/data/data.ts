@@ -22,3 +22,20 @@ export const userTypes = [
     icon: IconUsersGroup,
   },
 ] as const
+
+export const regionTypes = [
+  'Bình Tân',
+  'Tân Bình',
+  'Gò Vấp',
+  'Phú Nhuận',
+  'Thủ Đức',
+  'Quận 1',
+  'Quận 3',
+  'Quận 7',
+  'Cầu Giấy',
+  'Ba Đình',
+  'Thanh Xuân',
+  'Hoàng Mai',
+  'Hải Châu',
+  'Sơn Trà'
+] as const;

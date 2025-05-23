@@ -1,21 +1,5 @@
 import { faker } from '@faker-js/faker'
-
-const regions = [
-  'Bình Tân',
-  'Tân Bình',
-  'Gò Vấp',
-  'Phú Nhuận',
-  'Thủ Đức',
-  'Quận 1',
-  'Quận 3',
-  'Quận 7',
-  'Cầu Giấy',
-  'Ba Đình',
-  'Thanh Xuân',
-  'Hoàng Mai',
-  'Hải Châu',
-  'Sơn Trà'
-];
+import { regionTypes } from './data'
 
 export const users = Array.from({ length: 20 }, () => {
   const firstName = faker.person.firstName()
@@ -40,6 +24,6 @@ export const users = Array.from({ length: 20 }, () => {
     ]),
     createdAt: faker.date.past(),
     updatedAt: faker.date.recent(),
-    region: faker.helpers.arrayElement(regions)
+    region: faker.helpers.arrayElement(regionTypes)
   }
 })
