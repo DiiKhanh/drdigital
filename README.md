@@ -1,54 +1,60 @@
-# React + TypeScript + Vite
+# drdigital
+   ![Screenshot](public/screenshot.png)
+## Getting Started
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Follow these steps to set up and run the project locally:
 
-Currently, two official plugins are available:
+### Prerequisites
+- **Node.js v22.x** (required)
+- **Yarn** (recommended package manager)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Clone the Repository
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+git clone https://github.com/DiiKhanh/drdigital.git
+cd drdigital
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+### 2. Install Dependencies
 
-```js
-// eslint.config.js
-import reactDom from 'eslint-plugin-react-dom'
-import reactX from 'eslint-plugin-react-x'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+```bash
+yarn install
 ```
+
+### 3. Start the Development Server
+
+```bash
+yarn dev
+```
+
+This will start the Vite development server. Open your browser and navigate to the URL shown in the terminal (usually http://localhost:5173).
+
+### 4. Build for Production
+
+To build the project for production:
+
+```bash
+yarn build
+```
+
+### 5. Preview the Production Build
+
+```bash
+yarn preview
+```
+
+---
+
+## Tech Stack
+- **React**
+- **Vite**
+- **Node.js v22**
+- **Yarn**
+
+## Notes
+- Make sure you are using Node.js v22.x for compatibility.
+- If you do not have Yarn installed, you can install it globally with:
+  ```bash
+  npm install -g yarn
+  ```
+- For any issues, please check the repository issues or open a new one.
